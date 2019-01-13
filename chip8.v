@@ -31,9 +31,9 @@ module top(input wire CLK,
            output wire PIN_6,
            output wire PIN_5);
 
-  assign PIN_12 = 1; // oled: VCC
-  assign PIN_11 = 0; // oled: GND
-  assign PIN_10 = 0; // oled: NC
+  assign PIN_6 = 1; // oled: VCC
+  assign PIN_5 = 0; // oled: GND
+  assign PIN_12 = 0; // oled: NC
 
   // Turbo mode: connect pin to ground to bypass instruction rate limit.
   wire turbo_mode;
@@ -83,11 +83,11 @@ module top(input wire CLK,
            .scr_read_ack(scr_read_ack));
 
   oled o(.clk(CLK),
-         .pin_din(PIN_9),
-         .pin_clk(PIN_8),
-         .pin_cs(PIN_7),
-         .pin_dc(PIN_6),
-         .pin_res(PIN_5),
+         .pin_din(PIN_8),
+         .pin_clk(PIN_7),
+         .pin_cs(PIN_11),
+         .pin_dc(PIN_10),
+         .pin_res(PIN_9),
          .read(oled_read),
          .row_idx(oled_row_idx),
          .column_idx(oled_column_idx),
