@@ -1,0 +1,9 @@
+    ld v1, 30          ; x coordinate
+    ld v2, 16          ; y coordinate
+loop:
+    cls                ; clear the screen
+    ld v0, k           ; wait for key
+    ld f, v0           ; get font for key
+    drw v1, v2, 5      ; draw the hex digit
+    jp loop
+
