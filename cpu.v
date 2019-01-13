@@ -519,8 +519,10 @@ module cpu(input wire clk,
                   pc <= pc;
                 else begin
                   for (i = 15; i >= 0; i--)
-                    if (keys[i])
-                      vx <= i[7:0];
+                    if (keys[i]) begin
+                      new_vx <= i[7:0];
+                      state <= STATE_STORE_VX;
+                    end
                 end
               end
               8'h15: begin
